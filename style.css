@@ -1,0 +1,81 @@
+/* Basic Reset and Background */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7e8;
+    color: #333;
+    text-align: center;
+}
+
+#game-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Counter Display Styling */
+#countdown-display {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ff6347; /* Tomato Red */
+}
+
+/* Status Message Styling */
+#status-message {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    height: 25px; /* Fixed height to prevent jumpiness */
+}
+
+/* Friend Picture Styling */
+#friend-pic {
+    /* Set an initial size for the picture */
+    width: 300px; 
+    height: 300px;
+    object-fit: cover; /* Ensures the image covers the area nicely */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, width 0.3s, filter 0.3s, opacity 0.3s; /* Smooth transitions for effects */
+    /* Starting scale, will be manipulated by JS */
+    transform: scale(1); 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+#friend-pic:hover {
+    transform: scale(1.02);
+}
+
+/* CSS Classes for Game States (Managed by JavaScript) */
+
+/* The "Stuffed" Effect (Instead of bruised) */
+.stuffed-level-1 {
+    filter: brightness(0.9) saturate(1.2);
+}
+.stuffed-level-2 {
+    filter: brightness(0.8) saturate(1.4);
+    width: 320px !important; /* Makes the picture slightly bigger */
+    height: 320px !important;
+}
+.stuffed-level-3 {
+    filter: brightness(0.7) saturate(1.6);
+    width: 340px !important;
+    height: 340px !important;
+}
+
+/* The "Pop" Effect */
+.popped {
+    opacity: 0; /* Make it disappear on "explosion" */
+    transform: scale(2) rotate(10deg); /* Visual effect of popping */
+}
+
+/* The "Healing" Glow */
+.healing {
+    box-shadow: 0 0 20px 5px rgba(60, 179, 113, 0.8); /* Medium Sea Green glow */
+}
